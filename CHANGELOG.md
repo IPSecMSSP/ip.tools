@@ -41,7 +41,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Known Issues
 
-- [#1](https://github.com/jberkers42/ip.tools/-/issues/1) Documentation is somewhat lacking
+- [#1](https://github.com/jberkers42/ip.tools/issues/1) Linting Issue from first run of Mega-Linter
 
 [Unreleased]: https://github.com/jberkers42/ip.tools
-[0.0.1]: https://github.com/jberkers42/ip.tools/-/releases/v1.0.0
+[0.0.1]: https://github.com/jberkers42/ip.tools/releases/tag/v0.0.1
