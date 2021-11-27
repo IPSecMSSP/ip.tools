@@ -1,5 +1,7 @@
 # IP.Tools
 
+![GitHub release](https://img.shields.io/github/v/release/jberkers42/ip.tools?sort=semver)
+
 PowerShell module for the analysis and manipulation of IP Address related information.
 
 ## Overview
