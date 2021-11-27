@@ -10,7 +10,7 @@ Describe "IP.Tools Module Manifest" {
   }
 
   Context "Manifest Validation." {
-    
+
     It "Has a valid manifest." {
       { Test-ModuleManifest -Path $ModuleManifestPath -ErrorAction Stop -WarningAction SilentlyContinue } | Should -Not -Throw
     }
@@ -32,7 +32,7 @@ Describe "IP.Tools Module Manifest" {
     It 'Has a valid copyright.' {
       $Manifest.Copyright | Should -Not -BeNullOrEmpty
     }
-    
+
   }
 
 }

@@ -17,8 +17,7 @@ None of the modules I found handled this in the way I needed it, so this module 
 ## EXAMPLES
 
 '''powershell
-Install-Module -Name "DnsClient"
-$Ip = Resolve-DnsName "www.google.com"
+$Ip = "8.8.8.8"
 $MyNetwork = New-IpNetwork "192.168.0.0/24"
 if (Test-IpInNetwork -Address $Ip -Network $MyNetwork) {
   Write-Output "There's something strange going on, Google is in your network"

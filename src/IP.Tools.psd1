@@ -73,13 +73,13 @@ FunctionsToExport = 'Get-IpBogon', 'Remove-IpBogon', 'Test-IpBogon', 'Convert-Ma
                'New-IpNetwork', 'Test-IpInNetwork'
 
 # Cmdlets to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no cmdlets to export.
-CmdletsToExport = '*'
+CmdletsToExport = @()
 
 # Variables to export from this module
-VariablesToExport = '*'
+VariablesToExport = 'AllMask'
 
 # Aliases to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no aliases to export.
-AliasesToExport = '*'
+AliasesToExport = @()
 
 # DSC resources to export from this module
 # DscResourcesToExport = @()
