@@ -13,7 +13,7 @@ about: Suggest an idea for this project
 
 - [ ] Is there a corresponding **Issue** for either a bug or an enhancement?
 - [ ] Have you followed the guidelines in our Contributing document?
-- [ ] Have you checked to ensure there aren't other open [Pull Requests](../../../pulls) for the same update/change?
+- [ ] Have you checked to ensure there aren't other open [Pull Requests](../pulls) for the same update/change?
 
 <!-- You can erase any parts of this template not applicable to your Pull Request. -->
 
