@@ -10,16 +10,23 @@ $AllMask = [Math]::Pow(2, 32)
 New-Variable -Name AllMask -Value $AllMask -Scope Script -Force
 
 Class IpNetwork {
+
   [ipaddress]$IpAddress
   [ipaddress]$IpNetmask
+
   IpNetwork ([string]$CIDR) {
     ($IP, $MaskLen) = $CIDR.Split('/')
+    $IP = Get-IpNetworkBase -CIDR $CIDR
+    Write-Verbose "IP: $($IP); Mask: $($MaskLen)"
     $this.IpAddress = [ipaddress]($IP)
     $this.IpNetmask = [ipaddress](Convert-MaskLenToIp($MaskLen))
   }
-  IpNetwork ([string]$IP, [string] $Mask) {
-    $this.IpAddress = [ipaddress]($IP)
-    $this.IpNetmask = [ipaddress]($Mask)
+
+  IpNetwork ([IpAddress]$IP, [IpAddress] $Mask) {
+    Write-Verbose "IP: $($IP); Mask: $($Mask)"
+    $IP = Get-IpNetworkBase -IP $IP -Mask $Mask
+    $this.IpAddress = $IP
+    $this.IpNetmask = $Mask
   }
 }
 
