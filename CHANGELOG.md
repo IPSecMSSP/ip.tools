@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.2]
+
 ### Added
 
 - Get-IpNetworkBase
@@ -21,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Not using the Network Base address when defining an IpNetwork caused some Test-IpInNetwork tests to fail
+- Linting issues from first run(s) of MegaLinter on this repo
 
 ## [0.0.1] - 2021-11-26
 
@@ -59,4 +62,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - [#1](https://github.com/jberkers42/ip.tools/issues/1) Linting Issue from first run of Mega-Linter
 
 [Unreleased]: https://github.com/jberkers42/ip.tools
+[0.0.2]: https://github.com/jberkers42/ip.tools/releases/tag/v0.0.2
 [0.0.1]: https://github.com/jberkers42/ip.tools/releases/tag/v0.0.1
