@@ -55,15 +55,13 @@ function Get-IpNetworkBase {
   }
 
   Process {
-    if ($PSCmdlet.ShouldProcess("IpNetwork", "Return new IP Network from CIDR or IP and Mask")) {
-      If ($PSCmdlet.ParameterSetName -eq "CIDR") {
-        ([IpAddress]$IP, $MaskLen) = $CIDR -split '/'
-        [IpAddress]$Mask = Convert-MaskLenToIp $MaskLen
-      }
-      Write-Verbose "IP: $($IP); Mask: $($Mask);"
-      [IpAddress]$Net = ($IP.Address -band $Mask.Address)
-      return $Net
+    If ($PSCmdlet.ParameterSetName -eq "CIDR") {
+      ([IpAddress]$IP, $MaskLen) = $CIDR -split '/'
+      [IpAddress]$Mask = Convert-MaskLenToIp $MaskLen
     }
+    Write-Verbose "IP: $($IP); Mask: $($Mask);"
+    [IpAddress]$Net = ($IP.Address -band $Mask.Address)
+    return $Net
   }
 
   End {
