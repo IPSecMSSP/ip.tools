@@ -4,7 +4,7 @@ Module Name: IP.Tools
 schema: 2.0.0
 ---
 
-# Get-IpNetworkBase
+# Get-IpNetworkStartIp
 
 ## SYNOPSIS
 
@@ -13,31 +13,43 @@ Get an IpAddress object containing the Base Network Address for the CIDR or IP a
 ## SYNTAX
 
 ```powershell
-Get-IpNetworkBase [-CIDR] <string> [<CommonParameters>]
+Get-IpNetworkStartIP [-CIDR] <string> [-ExcludeNetwork] [<CommonParameters>]
 
-Get-IpNetworkBase [-IP] <ipaddress> [-Mask] <ipaddress> [<CommonParameters>]
+Get-IpNetworkStartIP [-IP] <string> [-Mask] <string> [-ExcludeNetwork] [<CommonParameters>]
+
+Get-IpNetworkStartIP [-Network] <IpNetwork> [-ExcludeNetwork] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Get an IpAddress object containing the Base Network Address for the CIDR or IP and Mask supplied.  The CIDR or IP address provided may not represent the base address of the network.
+Get an IpAddress object containing the Start IP Address for the CIDR or IP and Mask supplied.
 
 ## EXAMPLES
 
 ### Example 1
 
 ```powershell
-PS C:> (Get-IpNetworkBase -CIDR "192.168.10.10/24").IPAddressToString
+PS C:> (Get-IpNetworkStartIp -CIDR "192.168.10.10/24").IPAddressToString
 
     192.168.10.0
 ```
 
-Create a new IpNetwork object for the network specified in the CIDR.
+Get the string representation of the first IP address in the network specified in the CIDR. Counts the Network IP as the first IP by default.
 
 ### Example 2
 
 ```powershell
-PS C:> $MyNetwork = Get-IpNetworkBase -IP "192.168.10.18" -Mask "255.255.255.248"
+PS C:> (Get-IpNetworkStartIp -CIDR "192.168.10.10/24" -ExcludeNetwork).IPAddressToString
+
+    192.168.10.1
+```
+
+Get the string representation of the first IP address in the network specified in the CIDR. Skips the Network IP as the first IP.
+
+### Example 3
+
+```powershell
+PS C:> $MyNetwork = Get-IpNetworkStartIp -IP "192.168.10.18" -Mask "255.255.255.248"
 
     AddressFamily      : InterNetwork
     ScopeId            :
@@ -47,11 +59,11 @@ PS C:> $MyNetwork = Get-IpNetworkBase -IP "192.168.10.18" -Mask "255.255.255.248
     IsIPv6Teredo       : False
     IsIPv6UniqueLocal  : False
     IsIPv4MappedToIPv6 : False
-    Address            : 275032256
+    Address            : 269134016
     IPAddressToString  : 192.168.10.16
 ```
 
-Create a new IpNetwork object for the network specified in the IP and Mask parameters.
+Create a new IpAddress object for the first IP address in the subnet specified in the IP and Mask parameters.
 
 ## PARAMETERS
 

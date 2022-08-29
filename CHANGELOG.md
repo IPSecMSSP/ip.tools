@@ -10,7 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Get-IpNetworkBase
-- Documentation for new function
+- Documentation for new functions
+- Convert-IpToMaskLen
+- Get-IpNetworkEndIp
+- Get-IpNetworkStartIp
+- Test-IpRangeIsSubnet
+- Test-ValidMask
 
 ### Updated
 
@@ -19,6 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Pester Tests now load module using **Using**
 
 ### Fixed
+
+- Various documentation example inconsistencies
 
 - Not using the Network Base address when defining an IpNetwork caused some Test-IpInNetwork tests to fail
 
