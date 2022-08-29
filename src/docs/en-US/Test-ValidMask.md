@@ -4,41 +4,41 @@ Module Name: IP.Tools
 schema: 2.0.0
 ---
 
-# Test-IpBogon
+# Test-ValidMask
 
 ## SYNOPSIS
 
-Test if the provided IP is a Bogon
+Test if the provided IP is a valid Network Mask
 
 ## SYNTAX
 
 ```powershell
-Test-IpBogon [-Address] <ipaddress> [<CommonParameters>]
+Test-ValidMask [-Address] <ipaddress> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Test whether the provided IP is an IP Bogon (Internet non-routable) Addresses.
+Test if the provided IP is a valid Network Mask.
 
 ## EXAMPLES
 
 ### Example 1
 
 ```powershell
-PS > Test-IpBogon -Address "192.168.10.10"
+PS > Test-ValidMask -Address "255.255.255.240"
 ```
 
-Test if the provided address is a Bogon, with RFC1918 address.
+Test if the provided address is a valid IP Address Mask.
 
 Returns $true
 
 ### Example 2
 
 ```powershell
-PS > Test-IpBogon -Address "8.8.8.8"
+PS > Test-ValidMask -Address "255.255.255.17"
 ```
 
-Test if the provided address is a Bogon, with Google DNS address.
+Test if the provided address is a valid IP Address Mask.
 
 Returns $false
 
@@ -54,7 +54,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Boolean
+### boolean
 
 ## NOTES
 

@@ -4,7 +4,7 @@ Module Name: IP.Tools
 schema: 2.0.0
 ---
 
-# Get-IpNetworkBase
+# Get-IpNetworkEndIp
 
 ## SYNOPSIS
 
@@ -13,31 +13,33 @@ Get an IpAddress object containing the Base Network Address for the CIDR or IP a
 ## SYNTAX
 
 ```powershell
-Get-IpNetworkBase [-CIDR] <string> [<CommonParameters>]
+Get-IpNetworkEndIP [-CIDR] <string> [<CommonParameters>]
 
-Get-IpNetworkBase [-IP] <ipaddress> [-Mask] <ipaddress> [<CommonParameters>]
+Get-IpNetworkEndIP [-IP] <string> [-Mask] <string> [<CommonParameters>]
+
+Get-IpNetworkEndIP [-Network] <IpNetwork> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Get an IpAddress object containing the Base Network Address for the CIDR or IP and Mask supplied.  The CIDR or IP address provided may not represent the base address of the network.
+Get an IpAddress object containing the End IP Address for the CIDR or IP and Mask supplied.
 
 ## EXAMPLES
 
 ### Example 1
 
 ```powershell
-PS C:> (Get-IpNetworkBase -CIDR "192.168.10.10/24").IPAddressToString
+PS C:> (Get-IpNetworkEndIp -CIDR "192.168.10.10/24").IPAddressToString
 
-    192.168.10.0
+    192.168.10.255
 ```
 
-Create a new IpNetwork object for the network specified in the CIDR.
+Get the string representation of the last IP address in the network specified in the CIDR.
 
 ### Example 2
 
 ```powershell
-PS C:> $MyNetwork = Get-IpNetworkBase -IP "192.168.10.18" -Mask "255.255.255.248"
+PS C:> $MyNetwork = Get-IpNetworkEndIp -IP "192.168.10.18" -Mask "255.255.255.248"
 
     AddressFamily      : InterNetwork
     ScopeId            :
@@ -47,11 +49,11 @@ PS C:> $MyNetwork = Get-IpNetworkBase -IP "192.168.10.18" -Mask "255.255.255.248
     IsIPv6Teredo       : False
     IsIPv6UniqueLocal  : False
     IsIPv4MappedToIPv6 : False
-    Address            : 275032256
-    IPAddressToString  : 192.168.10.16
+    Address            : 386574528
+    IPAddressToString  : 192.168.10.23
 ```
 
-Create a new IpNetwork object for the network specified in the IP and Mask parameters.
+Get an IpAddress object for the last IP address in the network specified in the IP and Mask parameters.
 
 ## PARAMETERS
 

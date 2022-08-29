@@ -14,7 +14,7 @@ Class IpNetwork {
   [ipaddress]$IpAddress
   [ipaddress]$IpNetmask
 
-  IpNetwork ([string]$CIDR) {
+  IpNetwork([string]$CIDR) {
     ($IP, $MaskLen) = $CIDR.Split('/')
     $IP = Get-IpNetworkBase -CIDR $CIDR
     Write-Verbose "IP: $($IP); Mask: $($MaskLen)"
@@ -22,11 +22,19 @@ Class IpNetwork {
     $this.IpNetmask = [ipaddress](Convert-MaskLenToIp($MaskLen))
   }
 
-  IpNetwork ([IpAddress]$IP, [IpAddress] $Mask) {
+  IpNetwork([IpAddress]$IP, [IpAddress] $Mask) {
     Write-Verbose "IP: $($IP); Mask: $($Mask)"
     $IP = Get-IpNetworkBase -IP $IP -Mask $Mask
     $this.IpAddress = $IP
     $this.IpNetmask = $Mask
+  }
+
+  [system.net.ipaddress]GetStartAddress() {
+    return Get-IpNetworkStartIp -Network $this
+  }
+
+  [system.net.ipaddress]GetEndAddress() {
+    return Get-IpNetworkEndIP -Network $this
   }
 }
 
