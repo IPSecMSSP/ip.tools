@@ -22,11 +22,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - IpNetwork Class instantiator uses Get-IpNetworkBase to set the IpAddress of the resultant object
 - about_Ip.Tools discusses use of Class
 - Pester Tests now load module using **Using**
+- jscpd default configuration with threshold
 
 ### Fixed
 
 - Various documentation example inconsistencies
-
 - Not using the Network Base address when defining an IpNetwork caused some Test-IpInNetwork tests to fail
 
 ## [0.0.1] - 2021-11-26
