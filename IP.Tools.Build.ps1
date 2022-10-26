@@ -1,4 +1,3 @@
-[Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSUseCompatibleCmdLets")]
 
 param(
   [Parameter(Mandatory=$False)]
