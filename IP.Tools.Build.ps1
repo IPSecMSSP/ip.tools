@@ -1,5 +1,4 @@
-
-[Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSReviewUnusedParameter')]
+[Diagnostics.CodeAnalysis.SuppressMessageAttribute('PSReviewUnusedParameter','')]
 param(
   [Parameter(Mandatory=$False)]
   [string]$CertificateName = 'IPSec SOC Internal Code Signing',
@@ -8,9 +7,11 @@ param(
   [string]$CertificateStore = 'LocalMachine',
 
   [Parameter(Mandatory=$False)]
-  [string]$CertificateLocation = 'MY'
-)
+  [string]$CertificateLocation = 'MY',
 
+  [Parameter(Mandatory=$False)]
+  [string]$PSGalleryAPIKey = $Env:PSGalleryAPIKey
+)
 
 # Task for installing Pester if not present.
 Add-BuildTask EnsurePester {
@@ -172,18 +173,18 @@ Add-BuildTask Build Test, Clean, Compile, GenerateHelp
 Add-BuildTask . Build
 
 # Task for publishing the built module to the PowerShell Gallery, which will also run a build.
-Add-BuildTask Publish Build, {
+Add-BuildTask Publish Build, Sign, {
   $SourceDirectory = "$BuildRoot\src"
   $Module = Get-ChildItem -Path $SourceDirectory -Filter *.psd1 -Recurse | Select-Object -First 1
   $BuildDirectory = "$BuildRoot\build\$($Module.BaseName)"
   $Manifest = Import-PowerShellDataFile -Path $Module.FullName
   $ModuleVersion = $Manifest.ModuleVersion
 
-  Assert-Build ($env:PSGalleryAPIKey) "PowerShell Gallery API Key environment variable not found!"
+  Assert-Build ($PSGalleryAPIKey) "PowerShell Gallery API Key Parameter not found!"
   Try {
     $Params = @{
       Path        = "$BuildDirectory"
-      NuGetApiKey = $env:PSGalleryAPIKey
+      NuGetApiKey = $PSGalleryAPIKey
       ErrorAction = "Stop"
     }
     Publish-Module @Params
@@ -194,4 +195,3 @@ Add-BuildTask Publish Build, {
   }
 
 }
-
