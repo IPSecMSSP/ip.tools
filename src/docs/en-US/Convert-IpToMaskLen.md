@@ -4,33 +4,33 @@ Module Name: IP.Tools
 schema: 2.0.0
 ---
 
-# Convert-MaskLenToIp
+# Convert-IpMaskToLen
 
 ## SYNOPSIS
 
-Convert MaskLen from CIDR Notation (IP/MaskLen) to an IP Address object
+Convert IP Address notation Mask to MaskLen as used in CIDR Notation (IP/MaskLen)
 
 ## SYNTAX
 
 ```powershell
-Convert-MaskLenToIp [-MaskLen] <int> [<CommonParameters>]
+Convert-IpToMaskLen [-SubnetMask] <ipaddress> [<CommonParameters>]
 ```
 
 ## DESCRIPTION
 
-Convert MaskLen from CIDR (Classless Inter-Domain Routing) Notation (IP/MaskLen) to an IP Address object that represents the netmask.
+Convert IP Address notation Mask as a string or IpAddress Object to MaskLen as used in CIDR (Classless Inter Domain Routing) Notation (IP/MaskLen).
 
-This can subsequently be used to perform calculations, like checking if a single IP address belongs to a specific network.
+This can subsequently be used to perform calculations.
 
 ## EXAMPLES
 
 ### Example 1
 
 ```powershell
-PS > $Mask = Convert-MaskLenToIp -MaskLen 24
+PS > $MaskLen = Convert-IpToMaskLen -SubnetMask 255.255.255.192
 ```
 
-Assign the **ipaddress** representation of the mask to a variable.
+Assign the **MaskLen** representation of the mask to a variable.
 
 ## PARAMETERS
 
