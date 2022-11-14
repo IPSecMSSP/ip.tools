@@ -13,7 +13,7 @@ function Get-IpBogon {
     .EXAMPLE
         PS> $Bogons = Get-IpBogon.ps1
     .LINK
-        https://github.com/jberkers42/ip.tools
+        https://github.com/IPSecMSSP/ip.tools
   #>
   [CmdletBinding()]
 

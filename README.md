@@ -1,7 +1,7 @@
 # IP.Tools
 
 ![GitHub release](https://img.shields.io/github/v/release/jberkers42/ip.tools?sort=semver)
-[![MegaLinter](https://github.com/jberkers42/ip.tools/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/jberkers42/ip.tools/actions?query=workflow%3AMegaLinter+branch%3Amain)
+[![MegaLinter](https://github.com/IPSecMSSP/ip.tools/workflows/MegaLinter/badge.svg?branch=main)](https://github.com/IPSecMSSP/ip.tools/actions?query=workflow%3AMegaLinter+branch%3Amain)
 
 PowerShell module for the analysis and manipulation of IP Address related information.
 

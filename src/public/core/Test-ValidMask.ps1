@@ -21,7 +21,7 @@ function Test-ValidMask {
 
 
     .LINK
-      https://github.com/jberkers42/ip.tools
+      https://github.com/IPSecMSSP/ip.tools
   #>
   [cmdletbinding()]
   param (

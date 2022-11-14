@@ -60,7 +60,7 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## RELATED LINKS
 
-[IP.Tools Project](https://github.com/jberkers42/ip.tools)
+[IP.Tools Project](https://github.com/IPSecMSSP/ip.tools)
 [IP Bogon Ranges](https://ipgeolocation.io/resources/bogon.html)
 [RFC1112](https://www.rfc-editor.org/rfc/rfc1112.html)
 [RFC1122](https://www.rfc-editor.org/rfc/rfc1122.html)
