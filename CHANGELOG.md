@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.0]
+
 ### Added
 
 - Implement Code Signing
@@ -41,6 +43,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Various documentation example inconsistencies
 - Not using the Network Base address when defining an IpNetwork caused some Test-IpInNetwork tests to fail
+- [#2](https://github.com/IPSecMSSP/ip.tools/issues/5) New-IpNetwork should force the IpAddress property to use the Network Base Address
 
 ## [0.0.2] - 2021-12-22
 
@@ -65,7 +68,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Various documentation example inconsistencies
 - Not using the Network Base address when defining an IpNetwork caused some Test-IpInNetwork tests to fail
-- Linting issues from first run(s) of MegaLinter on this repo
+- [#1](https://github.com/IPSecMSSP/ip.tools/issues/1) Linting Issue from first run of Mega-Linter
 
 ## [0.0.1] - 2021-11-26
 
@@ -101,9 +104,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Known Issues
 
-- [#1](https://github.com/jberkers42/ip.tools/issues/1) Linting Issue from first run of Mega-Linter
-
-[Unreleased]: https://github.com/jberkers42/ip.tools
-[0.0.3]: https://github.com/jberkers42/ip.tools/releases/tag/v0.0.3
-[0.0.2]: https://github.com/jberkers42/ip.tools/releases/tag/v0.0.2
-[0.0.1]: https://github.com/jberkers42/ip.tools/releases/tag/v0.0.1
+[Unreleased]: https://github.com/IPSecMSSP/ip.tools
+[1.0.0]: https://github.com/IPSecMSSP/ip.tools/releases/tag/v1.0.0
+[0.0.3]: https://github.com/IPSecMSSP/ip.tools/releases/tag/v0.0.3
+[0.0.2]: https://github.com/IPSecMSSP/ip.tools/releases/tag/v0.0.2
+[0.0.1]: https://github.com/IPSecMSSP/ip.tools/releases/tag/v0.0.1

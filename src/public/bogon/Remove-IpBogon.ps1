@@ -15,7 +15,7 @@ function Remove-IpBogon {
 
       Obtain a list of IPs from some source (like a SIEM), and filter out the Bogon addresses
     .LINK
-        https://github.com/jberkers42/ip.tools
+        https://github.com/IPSecMSSP/ip.tools
   #>
 [cmdletbinding(SupportsShouldProcess)]
   param (

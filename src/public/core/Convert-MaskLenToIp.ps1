@@ -43,7 +43,7 @@ function Convert-MaskLenToIp {
       IPAddressToString  : 255.255.255.224
 
     .LINK
-      https://github.com/jberkers42/ip.tools
+      https://github.com/IPSecMSSP/ip.tools
   #>
   [CmdletBinding()]
   [OutputType([ipaddress])]

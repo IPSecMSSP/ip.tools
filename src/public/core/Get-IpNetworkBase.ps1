@@ -26,7 +26,7 @@ function Get-IpNetworkBase {
 
 
     .LINK
-      https://github.com/jberkers42/ip.tools
+      https://github.com/IPSecMSSP/ip.tools
   #>
   [CmdletBinding(DefaultParameterSetName = 'CIDR')]
   [OutputType([IpAddress])]
